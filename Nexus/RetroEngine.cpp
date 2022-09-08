@@ -1,7 +1,5 @@
 #include "RetroEngine.hpp"
-#if RETRO_PLATFORM == RETRO_UWP
-#include <winrt/base.h>
-#include <winrt/Windows.Storage.h>
+#if RETRO_PLATFORM == RETRO_EMSCRIPTEN
 #endif
 
 bool usingCWD        = false;
@@ -229,7 +227,7 @@ void RetroEngine::Init()
     initMods();
 #endif
     char dest[0x200];
-#if RETRO_PLATFORM == RETRO_UWP
+#if RETRO_PLATFORM == RETRO_EMSCRIPTEN
     static char resourcePath[256] = { 0 };
 
     if (strlen(resourcePath) == 0) {

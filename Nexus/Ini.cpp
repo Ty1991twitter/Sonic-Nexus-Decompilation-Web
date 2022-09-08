@@ -16,7 +16,7 @@ IniParser::IniParser(const char *filename, bool addPath)
     char pathBuffer[0x80];
 
     if (addPath) {
-#if RETRO_PLATFORM == RETRO_UWP
+#if RETRO_PLATFORM == RETRO_EMSCRIPTEN
         if (!usingCWD)
             sprintf(pathBuffer, "%s/%s", getResourcesPath(), filename);
         else
@@ -257,7 +257,7 @@ void IniParser::Write(const char *filename, bool addPath)
     char pathBuffer[0x80];
 
     if (addPath) {
-#if RETRO_PLATFORM == RETRO_UWP
+#if RETRO_PLATFORM == RETRO_EMSCRIPTEN
         if (!usingCWD)
             sprintf(pathBuffer, "%s/%s", getResourcesPath(), filename);
         else

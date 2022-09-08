@@ -14,7 +14,7 @@ inline void printLog(const char *msg, ...)
         sprintf(buffer, "%s\n", buffer);
 
         char pathBuffer[0x100];
-#if RETRO_PLATFORM == RETRO_OSX || RETRO_PLATFORM == RETRO_UWP
+#if RETRO_PLATFORM == RETRO_OSX || RETRO_PLATFORM == RETRO_EMSCRIPTEN
         if (!usingCWD)
             sprintf(pathBuffer, "%s/log.txt", getResourcesPath());
         else
